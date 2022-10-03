@@ -110,21 +110,28 @@ header .navigation a:hover{
 }
 
 .about{
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: 1.8fr 1fr;
+  grid-template-rows : 1fr;
+  grid-template-areas: 
+    "info image";
   background-color: rgb(255, 255, 255);
 }
 
 .about .image img{
-  flex: 50%;
-  max-width: 400px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  grid-area: image;
+  max-width: 425px;
+  position: center;
 }
 
 .about .info{
   margin: 60px 190px;
   padding-bottom: 200px;
   max-width: 600px;
-  flex:50%;
+  grid-area: info;
 }
 
 .about .info h3{
@@ -143,6 +150,81 @@ header .navigation a:hover{
   margin-bottom: 40px;
   color: rgb(27, 18, 18);
 }
+
+.information{
+  background-color: rgb(27, 18, 18);
+  text-align: center;
+}
+
+.card-list {
+  display: grid;
+  grid-template-columns: auto auto auto auto auto;
+  grid-template-rows : auto auto;
+  /*display: flex;
+  flex-direction: row;*/
+  column-gap: 15px;
+  row-gap: 15px;
+  justify-items: center;
+}
+
+
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  background-color: rgb(255, 255, 255);
+  transition: 0.3s;
+  width: 100%;
+}
+
+.card img{
+  max-height: 100px;
+}
+
+.card h4 {
+  padding-top: 5%;
+  color:rgb(27, 18, 18);
+  text-transform: uppercase;
+}
+
+.card-list .card .container p{
+  color:rgb(27, 18, 18);
+  font-weight: 300;
+  text-transform: uppercase;
+}
+
+.card:hover {
+  box-shadow: 0 8px 16px 0 rgb(255, 255, 255);
+}
+
+.container {
+  padding: 2px 16px;
+}
+
+/*.service .image img{
+  max-width: 400px;
+}*/
+
+.information .info{
+  margin: 60px 190px;
+  padding-bottom: 200px;
+}
+
+.information .info h3{
+  color: rgb(255, 255, 255);
+  font-size: 35px;
+  text-transform: uppercase;
+  font-weight: 800;
+  letter-spacing: 2px;
+  line-height: 60px;
+  margin-bottom: 30px;
+}
+
+.information .info p{
+  font-size: 16px;
+  font-weight: 500;
+  margin-bottom: 40px;
+  color: rgb(255, 255, 255);
+}
+
 
 .media{
   padding-bottom: 40px;
@@ -274,6 +356,36 @@ label{
   .content .info p{
     font-size: 14px;
   }
+
+  .about{
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas: 
+      "info"
+      "image";
+  }
+
+  .about .info{
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+  }
+
+  .information .info h3{
+    text-align: center;
+    font-size: 21px;
+  }
+
+  .card-list {
+    grid-template-columns: auto;
+    grid-template-rows : auto;
+    max-height: 20%;
+    margin-bottom: 30px;
+  }
+
+  .card img{
+    max-height: 350px;
+  }
+
 }
 
 @media (max-width: 560px){
@@ -299,14 +411,13 @@ label{
   .content .info-btn{
     font-size: 14px;
   }
-
-  .about .info {
+  /*.about .info {
     flex: 100%;
   }
 
   .about .image img{
     flex: 100%;
     align-content: center;
-  }
+  }*/
 
 }
